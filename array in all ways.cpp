@@ -21,6 +21,7 @@ class Cat : public Animal {
 };
 
 int main (){
+    //class to launch polymorhism
     Animal* a1 = new Sheep;
     Animal* a2 = new Cat;
     a1->voice();

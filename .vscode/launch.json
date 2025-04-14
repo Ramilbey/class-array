@@ -1,16 +1,13 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "name": "(gdb) Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/my_program.exe",  // Ensure this is the correct executable path
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",  // Path to your gdb.exe
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -28,14 +25,14 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/my_program.exe",  // Ensure this is the correct executable path
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",  // Correct path to gdb
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -53,15 +50,15 @@
             "name": "(gdb) Pipe Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/my_program.exe",  // Correct the program path
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "pipeTransport": {
-                "debuggerPath": "/usr/bin/gdb",
-                "pipeProgram": "<full path to pipe program such as plink.exe>",
+                "debuggerPath": "/usr/bin/gdb",  // This path is for Linux or macOS, adjust accordingly
+                "pipeProgram": "<full path to pipe program such as plink.exe>",  // Provide the correct path
                 "pipeArgs": [],
                 "pipeCwd": ""
             },
@@ -83,7 +80,7 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/my_program.exe",  // Correct path to your program
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -94,11 +91,11 @@
             "name": "(gdb) Bash on Windows Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/my_program.exe",  // Correct program path
             "processId": "${command:pickRemoteProcess}",
             "pipeTransport": {
-                "debuggerPath": "/usr/bin/gdb",
-                "pipeProgram": "${env:windir}\\system32\\bash.exe",
+                "debuggerPath": "/usr/bin/gdb",  // Path to gdb on Linux/macOS, adjust accordingly
+                "pipeProgram": "${env:windir}\\system32\\bash.exe",  // Path to bash on Windows
                 "pipeArgs": ["-c"],
                 "pipeCwd": ""
             },
@@ -114,27 +111,6 @@
                     "ignoreFailures": true
                 }
             ]
-        },
-        {
-            "name": "(gdb) Attach",
-            "type": "cppdbg",
-            "request": "attach",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
-            "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ]
         }
-
     ]
 }
