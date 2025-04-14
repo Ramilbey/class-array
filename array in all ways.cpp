@@ -1,4 +1,4 @@
-#include <iostream> 
+#include <iostream>
 using namespace std;
 
 class Animal{
@@ -8,15 +8,15 @@ class Animal{
         }
 };
 class Sheep : public Animal {
-    public: 
+    public:
     void voice() override{
-        cout << "Baa Baa Baa /n";
+        cout << "Baa Baa Baa \n";
     }
 };
 class Cat : public Animal {
     public :
     void voice () override{
-        cout << "Mewo Mewo Mewo /n";
+        cout << "Mewo Mewo Mewo \n";
     }
 };
 
